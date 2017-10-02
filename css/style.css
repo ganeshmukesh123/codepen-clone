@@ -1,0 +1,49 @@
+body{
+	font-family: sans-serif;
+	padding: 0px;
+	margin: 0px;
+}
+
+#header{
+	width: 100%;
+	background-color: #eeeeee;
+	padding: 5px;
+	height: 34px;
+}
+
+#logo{
+	padding: 0px;
+	margin: 0px 10px;
+	font-size: 30px;
+	float: left;
+}
+
+#button_container{
+	width: 261px;
+	margin: 0 auto;
+}
+
+.toggle_button{
+	float: left;
+	border: 1px solid #ccc;
+	padding: 7px;
+	/*border-radius: 5px;
+	margin: 2px;*/
+	border-right: none;
+	background-color: hsl(215, 100%, 96%);
+}
+
+/*.toggle_button:hover{
+	background-color: #eeeeee;
+}*/
+
+#html{
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+#output{
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-right: 1px solid #ccc;
+}

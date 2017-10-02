@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>CodePen Clone</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <div id="header">
@@ -9,7 +10,7 @@
 		Codepen
 	</div>
 	<div id="button_container">
-		<div class="toggle_button" id="html">
+		<div class="toggle_button active" id="html">
 			HTML
 		</div>
 		<div class="toggle_button" id="css">
@@ -18,14 +19,19 @@
 		<div class="toggle_button" id="javascript">
 			JavaScript
 		</div>
-		<div class="toggle_button" id="output">
+		<div class="toggle_button active" id="output">
 			Output
 		</div>
 	</div>
 </div>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
-	
+	$(".toggle_button").hover(function () {
+		$(this).css("background-color","#F5F9FF");
+	}
+	,function(){
+		$(this).css("background-color","hsl(215, 100%, 96%)");
+	});
 </script>
 </body>
 </html>
