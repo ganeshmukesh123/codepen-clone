@@ -25,11 +25,21 @@
 	</div>
 </div>
 <div id="body_container">
-	<textarea id="html_panel" class="panel">We Can</textarea>
+	<textarea id="html_panel" class="panel"><p id="ptag">WE WILL</p></textarea>
+	<textarea id="css_panel" class="panel hidden">p {color:red;}</textarea>
+	<textarea id="javascript_panel" class="panel hidden">document.getElementById("ptag").innerHTML="WE CAN"</textarea>
 	<iframe id="output_panel" class="panel"></iframe>
 </div>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
+    
+    function updateOutput(){
+    	$("iframe").contents().find("html").html("<html><head><style type = 'text/css'>" + $("#css_panel").val() + "</style></head><body>" + $("#html_panel").val() + "</body></html>");
+
+    	document.getElementById('output_panel').contentWindow.eval($("#javascript_panel").val());
+    	
+    }
+
 	$(".toggle_button").hover(function () {
 		$(this).addClass("highlighted_button");
 	}
@@ -40,16 +50,23 @@
 	$(".toggle_button").click(function(){
 		$(this).toggleClass("active");
 		$(this).removeClass("highlighted_button");
+		var panelId = $(this).attr("id") + "_panel";
+		//alert(panelId);
+		$("#" + panelId).toggleClass("hidden");
+		var hiddenClass = $(".hidden").length;
+		var activeClass = 4 - hiddenClass;
+
+		$(".panel").width($(window).width()/activeClass -10);
 	});
 
 	$(".panel").height($(window).height() - $("#header").height()-25);
 
 	$(".panel").width($(window).width()/2 -10);
 
-	$("iframe").contents().find("html").html($("#html_panel").val());
+	updateOutput();
 
 	$("textarea").on("change keyup paste",function(){
-		$("iframe").contents().find("html").html($("#html_panel").val());
+		updateOutput();
 	});
 </script>
 </body>
