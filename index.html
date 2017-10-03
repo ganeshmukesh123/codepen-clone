@@ -24,14 +24,27 @@
 		</div>
 	</div>
 </div>
+<div id="body_container">
+	<textarea id="html_panel" class="panel">We Can</textarea>
+	<iframe id="output_panel" class="panel"></iframe>
+</div>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 	$(".toggle_button").hover(function () {
-		$(this).css("background-color","#F5F9FF");
+		$(this).addClass("highlighted_button");
 	}
 	,function(){
-		$(this).css("background-color","hsl(215, 100%, 96%)");
+		$(this).removeClass("highlighted_button");
 	});
+
+	$(".toggle_button").click(function(){
+		$(this).toggleClass("active");
+		$(this).removeClass("highlighted_button");
+	});
+
+	$(".panel").height($(window).height() - $("#header").height()-25);
+
+	$(".panel").width($(window).width()/2 -10);
 </script>
 </body>
 </html>

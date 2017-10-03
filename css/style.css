@@ -47,3 +47,34 @@ body{
 	border-bottom-right-radius: 5px;
 	border-right: 1px solid #ccc;
 }
+
+.active{
+	background-color: #F5F9FF;
+}
+
+.highlighted_button{
+	background-color: grey;
+}
+
+textarea{
+/*	jquery is used
+    position: fixed;
+	top: 50px;
+	bottom: 0;
+	left: 6px;*/
+	resize: none;
+	border-top: none;
+	border-bottom: none;
+	border-left: none;
+	border-color: grey;
+	
+}
+
+.panel{
+	margin: 2px;
+	float: left;
+}
+
+iframe{
+	border:none;
+}
