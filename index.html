@@ -45,6 +45,12 @@
 	$(".panel").height($(window).height() - $("#header").height()-25);
 
 	$(".panel").width($(window).width()/2 -10);
+
+	$("iframe").contents().find("html").html($("#html_panel").val());
+
+	$("textarea").on("change keyup paste",function(){
+		$("iframe").contents().find("html").html($("#html_panel").val());
+	});
 </script>
 </body>
 </html>
